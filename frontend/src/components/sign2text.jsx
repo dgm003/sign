@@ -31,7 +31,7 @@ const SignToText = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiUrl = "https://signease-backend-idfy.onrender.com";
 
   const startDetection = useCallback(async () => {
     if (!cameraOn || !webcamRef.current) return;
@@ -39,7 +39,7 @@ const SignToText = () => {
     if (!imageSrc) return;
 
     try {
-      const response = await axios.post(`${apiUrl}/api/detect`, { image: imageSrc });
+      const response = await axios.post(`https://signease-backend-idfy.onrender.com/api/detect`, { image: imageSrc });
       const { detectedText } = response.data;
       setCurrentSign(detectedText);
     } catch (error) {
