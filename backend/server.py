@@ -25,7 +25,7 @@ model = joblib.load(model_path)
 scaler = joblib.load(scaler_path)
 
 # Initialize MediaPipe
-mp_hands = mp.solutions.hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.7)
+mp_hands = mp.solutions.hands.Hands(static_image_mode=True, min_detection_confidence=0.7, min_tracking_confidence=0.7)
 
 
 @app.route("/api/detect", methods=["POST"])
