@@ -31,8 +31,6 @@ const SignToText = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const apiUrl = "https://signease-backend-idfy.onrender.com";
-
   const startDetection = useCallback(async () => {
     if (!cameraOn || !webcamRef.current) return;
     const imageSrc = webcamRef.current.getScreenshot();
