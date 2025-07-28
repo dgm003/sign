@@ -45,7 +45,7 @@ const SignToText = () => {
     } catch (error) {
       setCurrentSign('Detection failed');
     }
-  }, [cameraOn, apiUrl]);
+  }, [cameraOn]);
 
   // Deduplicate repeated bigrams
   function deduplicateBigrams(text) {
